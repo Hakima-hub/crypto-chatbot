@@ -1,5 +1,6 @@
 openai==1.82.0
 pyTelegramBotAPI==4.27.0
+gunicorn
 
 
 
