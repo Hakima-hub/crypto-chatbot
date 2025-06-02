@@ -1,7 +1,6 @@
 openai==1.82.0
 pyTelegramBotAPI==4.27.0
 
-Flask @ file:///C:/b/abs_f9w7doyu0h/croot/flask_1716545924884/work
 
 
 
