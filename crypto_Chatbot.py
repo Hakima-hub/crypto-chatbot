@@ -37,8 +37,18 @@ def ask_openai(message):
         return f"OpenAI Error: {e}"
 
 app = Flask(__name__)
-@app.route("/", methods=["GET", "POST"])
+@app.route("/Webhook", methods=["GET"])
+def webhook():
+    update = request.get_json()
+    if update:
+        tele_bot.process_new_updates([telebot.types.Update.de_json(update)])
+        return "OK", 200
+
+@app.route("/", methods=["GET", "POST", "HEAD"])
 def home():
+    if request.method == "HEAD":
+        return "", 200
+        
     bot_response = ""
     if request.method == "POST":
         user_input = request.form.get("user_input")
