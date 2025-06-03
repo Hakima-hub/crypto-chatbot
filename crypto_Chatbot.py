@@ -70,7 +70,6 @@ def handle_telegram(message):
     tele_bot.send_message(message.chat.id, reply)
 
 if __name__ == "__main__":
-    tele_bot.polling(non_stop=True)
     app.run(debug=False, port=5000)
 
 
