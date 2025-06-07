@@ -40,6 +40,12 @@ app = Flask(__name__)
 
 @app.route("/health", methods=["GET", "HEAD"])
 def health():
+    if request.method == "GET":
+        return "", 200
+
+@app.route("/webhook", methods=["GET", "HEAD"])
+def webhook():
+    if request.method == "HEAD":
         return "", 200
 
 @app.route("/", methods=["GET",  "POST"])
